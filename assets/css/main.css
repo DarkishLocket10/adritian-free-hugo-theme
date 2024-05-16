@@ -452,12 +452,13 @@ legend {
 /* purgecss stop ignore */
 body {
     margin: 0;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
+    font-size: var(--font-size, 1rem);
+    font-weight: var(--font-weight, 400);
+    line-height: var(--line-height, 1.5);
+    color: var(--text-color, #212529);
+    background-color: var(--background-color, #fff);
 }
+
 dt,
 kbd kbd {
     font-weight: 700;
@@ -717,7 +718,7 @@ small {
 .mark,
 mark {
     padding: 0.2em;
-    background-color: #fcf8e3;
+    background-color: #8ab4c9;
 }
 .list-inline,
 .list-unstyled {
@@ -9387,6 +9388,7 @@ span a:hover {
     color: #fff;
     background-color: #000;
     border-color: #000;
+    border-radius: 12px;
     will-change: border-color, color, background-color;
     -webkit-transition: border-color, color, background-color;
     transition: border-color, color, background-color;
@@ -9735,6 +9737,7 @@ input[type="email"]::placeholder {
 }
 .about__profile-picture {
     -webkit-box-flex: 0;
+    
     flex: 0 0 calc(100% + 80px);
     max-width: calc(100% + 80px);
     width: calc(100% + 80px);
@@ -9946,9 +9949,21 @@ textarea:focus {
 .section div[class*="col-"].rad-col-text p {
     text-align: center;
 }
-.section div[class*="col-"] img {
-    max-width: 100%;
+.section div[class*="col-"] {
+    position: relative; /* Ensure the container is the reference for positioning */
+    overflow: hidden; /* Hide overflow to apply rounded corners */
+    border-radius: 20px; /* Apply border-radius to the container */
 }
+
+.section div[class*="col-"] img {
+    width: 100%; /* Ensure the image fits within the container */
+    height: 100%; /* Maintain the aspect ratio */
+    object-fit: cover; /* Ensure the image covers the entire container */
+    object-position: center; /* Center the image within the container */
+    display: block; /* Remove any default margin or padding */
+    border-radius: 20px; /* Apply border-radius to the image */
+}
+
 .section div[class*="col-"] img.image-left-overflow {
     margin-left: 0;
 }
@@ -10496,18 +10511,18 @@ textarea:focus {
     width: 100%;
 }
 .rad-showcase .platform-links {
-    margin-top: 40px;
+    margin-top: 30px;
     margin-right: -5px;
 }
 @media (min-width: 992px) {
     .rad-showcase .platform-links {
-        margin-top: 92px;
+        margin-top: 42px;
         margin-right: -10px;
     }
 }
 .rad-showcase .platform-links [class^="icon-"] {
     margin-right: 5px;
-    font-size: 17px;
+    font-size: 27px;
     color: #000;
 }
 .rad-showcase .platform-links [class^="icon-"]:hover::before {
@@ -10524,8 +10539,8 @@ textarea:focus {
 }
 @media (min-width: 992px) {
     .rad-showcase .platform-links [class^="icon-"] {
-        font-size: 19px;
-        margin-right: 10px;
+        font-size: 34px;
+        margin-right: 5px;
     }
 }
 .rad-showcase + section {

@@ -10,10 +10,12 @@ html body ::selection{
 .profile-image img{
     max-inline-size: 100%;
     block-size: auto;
+    border-radius: 45px;
 }
 
 .profile-image img{
     margin-top: 40px;
+    border-radius: 45px;
 }
 
 .rad-showcase__bg img{
