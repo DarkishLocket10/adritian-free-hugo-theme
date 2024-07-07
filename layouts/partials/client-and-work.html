@@ -10,25 +10,19 @@
           {{ range .Site.Data.homepage.client_and_work.clients }}
           <div class="clients__item">
             <a href="https://brucepower.com">
-              
+
               {{ $img := resources.Get .logo.x }}
               {{ $img2x := resources.Get .logo._2x }}
               {{ $imgWebp := $img.Resize (printf "%dx%d webp q75 Lanczos picture" $img.Width $img.Height) }}
               {{ $img2xWebp := $img2x.Resize (printf "%dx%d webp q75 Lanczos picture" $img2x.Width $img2x.Height) }}
-            
+
               <picture>
                 <source srcset="{{ $imgWebp.RelPermalink }} 1x, {{ $img2xWebp.RelPermalink }} 2x" type="image/webp" />
                 <source srcset="{{ $img.RelPermalink }} 1x, {{ $img2x.RelPermalink }} 2x" type="image/webp">
-                <img
-                  width="{{ $img.Width }}"
-                  height="{{ $img.Height }}"
-                  class="lozad img-responsive"
+                <img width="{{ $img.Width }}" height="{{ $img.Height }}" class="lozad img-responsive"
                   src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
-                  srcset="{{ $img.RelPermalink }} 1x, {{ $img2x.RelPermalink }} 2x"
-                  data-src="{{ $img.RelPermalink }}"
-                  data-srcset="{{ $img.RelPermalink }} 1x, {{ $img2x.RelPermalink }} 2x"
-                  alt="{{ .alt }}"
-                />
+                  srcset="{{ $img.RelPermalink }} 1x, {{ $img2x.RelPermalink }} 2x" data-src="{{ $img.RelPermalink }}"
+                  data-srcset="{{ $img.RelPermalink }} 1x, {{ $img2x.RelPermalink }} 2x" alt="{{ .alt }}" />
               </picture>
 
             </a>
@@ -39,17 +33,15 @@
     </div>
     {{ range $index, $element := .Site.Data.homepage.client_and_work.works }}
     <div
-      class="row row--padded rad-animation-group rad-fade-down {{ if .is_even }}flex-column-reverse flex-md-row{{ end }}"
-    >
+      class="row row--padded rad-animation-group rad-fade-down {{ if .is_even }}flex-column-reverse flex-md-row{{ end }}">
       {{ if .is_even }}
       <div class="col-12 col-md-5 mt-4 mt-md-0 my-md-auto">
         <h3>{{ .title }}</h3>
         <p class="lead">
           {{ .description }}
         </p>
-        <a href="{{ .button.URL | absURL }}" class="btn btn-primary"
-          >{{ .button.btnText }}<i class="{{ .button.icon }}"></i
-        ></a>
+        <a href="{{ .button.URL | absURL }}" class="btn btn-primary">{{ .button.btnText }}<i
+            class="{{ .button.icon }}"></i></a>
       </div>
       <div class="col-12 col-md-7 pl-md-0 text-right">
 
@@ -60,16 +52,10 @@
         <picture>
           <source srcset="{{ $imgWebp.RelPermalink }} 1x, {{ $img2xWebp.RelPermalink }} 2x" type="image/webp" />
           <source srcset="{{ $img.RelPermalink }} 1x, {{ $img2x.RelPermalink }} 2x" type="image/webp">
-          <img
-            width="{{ $img.Width }}"
-            height="{{ $img.Height }}"
-            class="lozad img-responsive"
+          <img width="{{ $img.Width }}" height="{{ $img.Height }}" class="lozad img-responsive"
             src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
-            srcset="{{ $img.RelPermalink }} 1x, {{ $img2x.RelPermalink }} 2x"
-            data-src="{{ $img.RelPermalink }}"
-            data-srcset="{{ $img.RelPermalink }} 1x, {{ $img2x.RelPermalink }} 2x"
-            alt="{{ .title }}"
-          />
+            srcset="{{ $img.RelPermalink }} 1x, {{ $img2x.RelPermalink }} 2x" data-src="{{ $img.RelPermalink }}"
+            data-srcset="{{ $img.RelPermalink }} 1x, {{ $img2x.RelPermalink }} 2x" alt="{{ .title }}" />
         </picture>
 
       </div>
@@ -78,19 +64,16 @@
         <img
           class='lozad img-responsive {{ cond (eq ( mod $index 4) 1)  "img-clip-right-backward" "img-clip-right-forward" }}'
           src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
-          data-src="{{ .image.x | absURL }}"
-          data-srcset="{{ .image.x | absURL }} 1x, {{ .image._2x | absURL }} 2x"
-          alt="{{ .title }}"
-        />
+          data-src="{{ .image.x | absURL }}" data-srcset="{{ .image.x | absURL }} 1x, {{ .image._2x | absURL }} 2x"
+          alt="{{ .title }}" />
       </div>
       <div class="col-12 col-md-5 mt-4 mt-md-0 my-md-auto">
         <h3>{{ .title }}</h3>
         <p class="lead">
           {{ .description }}
         </p>
-        <a href="{{ .button.URL | absURL }}" class="btn btn-primary"
-          >{{ .button.btnText }}<i class="{{ .button.icon }}"></i
-        ></a>
+        <a href="{{ .button.URL | absURL }}" class="btn btn-primary">{{ .button.btnText }}<i
+            class="{{ .button.icon }}"></i></a>
       </div>
       {{ end }}
     </div>

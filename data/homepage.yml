@@ -1,10 +1,10 @@
 # showcase
 showcase:
   enable: true
-  title: "Hey, I'm Yash."
+  title: "Hey, I'm Yash"
   subtitle: "Welcome to my website!"
   description: >
-    This website serves as my portfolio, showcasing my projects, skills, and professional accomplishments. I am a software engineer with a passion for creating innovative solutions to complex problems. I am always looking for new opportunities to collaborate on exciting projects. Feel free to explore my work and get in touch with me if you would like to work together!
+    This website serves as my portfolio, showcasing my projects, skills, and professional accomplishments. I'm a software engineer with a passion for creating innovative solutions to complex problems. I'm always looking for new opportunities to collaborate on exciting projects. Feel free to explore my work and get in touch with me if you would like to work together!
   image:
     x: "images/showcase/showcase.png"
     _2x: "images/showcase/showcase@2x.png"
@@ -61,11 +61,15 @@ education:
   items:
     - university: "Queen's University"
       year: "2020-2025"
-      degree: "Bachelor of Computing (Honours), Software Design Specialization"
+      degree: "Bachelor of Computing (Honours), Specialization in Software Design"
 
     - university: "Korah Collegiate & Vocational School"
       year: "2016-2020"
       degree: "High School Diploma, Academic Stream"
+
+      
+
+      
 
 # experience
 experience:
@@ -82,19 +86,31 @@ experience:
     btnText: "Download My Resume"
     URL: "YashPatelResume.pdf"
     target: "_blank"
+  image:
+    x: "images/who-am-i/user-picture.png"
+    _2x: "images/who-am-i/user-picture@2x.png"
 
-  items:
-    - title: "Sr. Title"
-      company: "Serious Business, Inc"
-      duration: "Feb 2011 - Sep 2019"
 
-    - title: "Sr. Title"
-      company: "Fancy Company, Inc"
-      duration: "Apr 2010 - Jan 2011"
 
-    - title: "Jr. Title"
-      company: "Company, Inc"
-      duration: "Jun 2009 - Mar 2010"
+professional:
+  enable: true # Set to true to enable this section
+  title: "Professional Experience"  # Title for the section
+  description: >  # Description text for the section (supports multiline)
+   With extensive experience in full-stack development, data analysis, and automation, I create and optimize digital solutions to streamline business operations and enhance user experiences.
+  button:
+      icon: "icon-linkedin-fill"
+      btnText: "Linkedin"
+      URL: "https://www.linkedin.com/in/yash-n-patel/"
+  button2:
+      icon: "icon-profile-fill"
+      btnText: "Download My Resume"
+      URL: "YashPatelResume.pdf"
+      target: "_blank"
+  image:
+    x: "images/professional/i.jpg"
+    _2x: "images/professional/i2x.jpg"
+
+
 
 # Client & Work
 client_and_work:
@@ -106,8 +122,6 @@ client_and_work:
         x: "images/clients/bruce.png"
         _2x: "images/clients/bruce.png"
       alt: "Bruce Power"
-
-
 
 
   works:

@@ -5,9 +5,10 @@
             <div class="col-12 cold-md-12 col-sm-6 mt-5 mt-sm-0">
                 {{ $xp := (where .Site.RegularPages.ByDate.Reverse "Type" "experience") }}
                 {{ $xpCount := len $xp }}
-                {{/* in the homepage we limit to the homepageExperienceCount param (6 by default) in the inner page (experience) we display the all */}}
+                {{/* in the homepage we limit to the homepageExperienceCount param (6 by default) in the inner page
+                (experience) we display the all */}}
                 {{ $totalCount := .Site.Params.homepageExperienceCount }}
-                
+
                 {{ if not .IsHome }}
                 {{ $totalCount = len $xp }}
                 {{ end }}
@@ -27,7 +28,7 @@
                 <div class="all-experience-container">
                     {{ $xpExtra := sub $xpCount $totalCount }}
                     <em>And {{ $xpExtra }} more</em><br />
-                    <a href="{{ absURL "experience" }} " title=" See additional {{ $xpExtra }} experience items"
+                    <a href="{{ absURL " experience" }} " title=" See additional {{ $xpExtra }} experience items"
                         class="btn btn-primary btn-all-experience">
                         <i class="{{ .Site.Data.homepage.experience.button3.icon }}"></i>
                         {{ .Site.Data.homepage.experience.button3.btnText }}
